@@ -60,7 +60,7 @@ SWARA is a mood-driven music recommendation web application that suggests songs 
 ---
 
 
-<img width="910" height="851" alt="Screenshot 2024-12-14 230648" src="https://github.com/user-attachments/assets/230542f2-13de-4f8d-a333-c0279c80758a" />
+<img width="300" height="300" alt="Screenshot 2024-12-14 230648" src="https://github.com/user-attachments/assets/230542f2-13de-4f8d-a333-c0279c80758a" />
 <img width="773" height="876" alt="Screenshot 2024-12-14 230706" src="https://github.com/user-attachments/assets/c09ea5d2-ff9c-4b28-96c6-efac59fa6064" />
 
 <img width="801" height="925" alt="Screensho<img width="1328" height="845" alt="Screenshot 2024-12-15 151505" src="https://github.com/user-attachments/assets/8ac76e34-95cb-44c0-8b42-0a92b3cc3255" />
