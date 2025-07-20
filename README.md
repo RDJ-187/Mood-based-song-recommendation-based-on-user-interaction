@@ -68,7 +68,7 @@ SWARA is a mood-driven music recommendation web application that suggests songs 
 <img width="400" height="300" alt="Screenshot 2024-12-15 151505" src="https://github.com/user-attachments/assets/8ac76e34-95cb-44c0-8b42-0a92b3cc3255" />
 <img width="400" height="300" alt="Screenshot 2024-12-15 151732" src="https://github.com/user-attachments/assets/ba758f9e-dc98-4425-9f26-f6712dc3285a" />
 <img width="400" height="300" alt="Screenshot 2024-12-15 151934" src="https://github.com/user-attachments/assets/40d82e5f-3962-420b-bc10-8b8315c844d0" />
-<img width="589" height="616" alt="Screenshot 2024-12-15 152009" src="https://github.com/user-attachments/assets/256fbdc5-9e6c-4189-8426-f3814c17d3cb" />
+<img width="400" height="300" alt="Screenshot 2024-12-15 152009" src="https://github.com/user-attachments/assets/256fbdc5-9e6c-4189-8426-f3814c17d3cb" />
 <img width="400" height="300" alt="Screenshot 2024-12-15 172751" src="https://github.com/user-attachments/assets/50e0ad55-f267-4aa0-b0d4-c171e7cd811a" />
 <img width="400" height="300" alt="Screenshot 2024-12-15 172430" src="https://github.com/user-attachments/assets/f38bd05a-8559-4a45-bb90-cbae867f372a" />
 <img width="400" height="300" alt="Screenshot 2024-12-15 172412" src="https://github.com/user-attachments/assets/04e1d84b-e0a8-4ae0-bc1a-f01cd6bad928" />
