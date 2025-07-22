@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Picture Mood Detection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #FF9933;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 4px solid transparent;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .grid img:hover {
+      transform: scale(1.05);
+    }
+
+    .grid img.selected {
+      border-color: #FF9933;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #FF9933;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background-color: #e68a00;
+    }
+  </style>
+</head>
+<body>
+  <h1>Select Any 8 Pictures</h1>
+  <div class="grid" id="picture-grid">
+    <!-- Pictures will be inserted dynamically -->
+  </div>
+  <button class="btn" id="submit-btn" disabled>Submit</button>
+
+  <script>
+    const pictures = [
+      { id: 1, src: "Happy_1.jpeg", category: "Happy" },
+      { id: 2, src: "Happy_2.jpeg", category: "Happy" },
+      { id: 3, src: "Happy_3.jpeg", category: "Happy" },
+      { id: 4, src: "Happy_4.jpeg", category: "Happy" },
+      { id: 5, src: "Happy_5.jpeg", category: "Happy" },
+      { id: 6, src: "Happy_6.jpeg", category: "Happy" },
+      { id: 7, src: "Happy_7.jpeg", category: "Happy" },
+      { id: 8, src: "Happy_8.jpeg", category: "Happy" },
+      { id: 9, src: "Sad_1.jpeg", category: "Sad" },
+      { id: 10, src: "Sad_2.jpeg", category: "Sad" },
+      { id: 11, src: "Sad_3.jpeg", category: "Sad" },
+      { id: 12, src: "Sad_4.jpeg", category: "Sad" },
+      { id: 13, src: "Sad_5.jpeg", category: "Sad" },
+      { id: 14, src: "Sad_6.jpeg", category: "Sad" },
+      { id: 15, src: "Sad_7.jpeg", category: "Sad" },
+      { id: 16, src: "Sad_8.jpeg", category: "Sad" },
+      { id: 17, src: "Angry_1.jpeg", category: "Angry" },
+      { id: 18, src: "Angry_2.jpeg", category: "Angry" },
+      { id: 19, src: "Angry_3.jpeg", category: "Angry" },
+      { id: 20, src: "Angry_4.jpeg", category: "Angry" },
+      { id: 21, src: "Angry_5.jpeg", category: "Angry" },
+      { id: 22, src: "Angry_6.jpeg", category: "Angry" },
+      { id: 23, src: "Angry_7.jpeg", category: "Angry" },
+      { id: 24, src: "Angry_8.jpeg", category: "Angry" },
+      { id: 25, src: "Depressed_1.jpeg", category: "Depressed" },
+      { id: 26, src: "Depressed_2.jpeg", category: "Depressed" },
+      { id: 27, src: "Depressed_3.jpeg", category: "Depressed" },
+      { id: 28, src: "Depressed_4.jpeg", category: "Depressed" },
+      { id: 29, src: "Depressed_5.jpeg", category: "Depressed" },
+      { id: 30, src: "Depressed_6.jpeg", category: "Depressed" },
+      { id: 31, src: "Depressed_7.jpeg", category: "Depressed" },
+      { id: 32, src: "Depressed_8.jpeg", category: "Depressed" }
+    ];
+
+    const grid = document.getElementById("picture-grid");
+    const submitBtn = document.getElementById("submit-btn");
+
+    let selectedPictures = [];
+
+    // Dynamically load pictures
+    pictures.forEach(picture => {
+      const img = document.createElement("img");
+      img.src = picture.src;
+      img.alt = picture.category;
+      img.dataset.category = picture.category;
+      img.addEventListener("click", () => selectPicture(img, picture));
+      grid.appendChild(img);
+    });
+
+    function selectPicture(img, picture) {
+      if (selectedPictures.includes(picture)) {
+        selectedPictures = selectedPictures.filter(p => p !== picture);
+        img.classList.remove("selected");
+      } else if (selectedPictures.length < 8) {
+        selectedPictures.push(picture);
+        img.classList.add("selected");
+      }
+
+      submitBtn.disabled = selectedPictures.length !== 8;
+    }
+
+    submitBtn.addEventListener("click", () => {
+      const moodCount = selectedPictures.reduce((acc, pic) => {
+        acc[pic.category] = (acc[pic.category] || 0) + 1;
+        return acc;
+      }, {});
+
+      const detectedMood = Object.keys(moodCount).reduce((a, b) => 
+        moodCount[a] > moodCount[b] ? a : b
+      );
+
+      // Redirect based on detected mood
+      window.location.href = `${detectedMood.toLowerCase()}.html`;
+    });
+  </script>
+</body>
+</html>
