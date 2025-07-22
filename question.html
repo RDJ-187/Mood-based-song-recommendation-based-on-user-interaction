@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion-Based Questionnaire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff8e1; /* Saffron theme */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffe0b2; /* Light saffron */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #d35400; /* Deep saffron */
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+        }
+        .options {
+            margin: 10px 0;
+        }
+        .options label {
+            display: block;
+            margin: 5px 0;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #d35400; /* Deep saffron */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Emotion-Based Questionnaire</h1>
+        <form id="questionnaire">
+            <!-- Questions here -->
+            <!-- Add your questions with radio buttons as in the previous example -->
+             <!-- Question 1 -->
+            <div class="question">
+                <p>1. Your teacher returns your assignment, and you see a note on the cover.
+                    How do you feel?</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="Happy"> Happy: The note says I did a great job!</label>
+                    <label><input type="radio" name="q1" value="Sad"> Sad: The note points out some areas I struggled with.</label>
+                    <label><input type="radio" name="q1" value="Angry"> Angry: Why did the teacher criticize my effort?</label>
+                    <label><input type="radio" name="q1" value="Depressed">Depressed: I’ll never be good enough, no matter what I do</label>
+                </div>
+            </div>
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. You text your best friend, but they don’t reply all day.</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="Happy"> Happy: They’re probably busy; I’ll hear from them later!</label>
+                    <label><input type="radio" name="q2" value="Sad"> Sad: I feel a bit forgotten; I wish they’d reply!</label>
+                    <label><input type="radio" name="q2" value="Angry"> Angry: Why are they ignoring me?!</label>
+                    <label><input type="radio" name="q2" value="Depressed">Depressed: They must not care about me anymore.</label>
+                </div>
+            </div>
+              <!-- Question 3 -->
+              <div class="question">
+                <p>3. You prepared a dish for a family dinner, and no one mentioned it during the meal.
+                    How do you feel?</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="Happy"> Happy: Maybe they enjoyed it but didn’t say anything</label>
+                    <label><input type="radio" name="q3" value="Sad"> Sad: I wish someone had acknowledged my effort.</label>
+                    <label><input type="radio" name="q3" value="Angry"> Angry: Why didn’t anyone appreciate what I did?</label>
+                    <label><input type="radio" name="q3" value="Depressed">Depressed: I must have done a terrible job; I shouldn't try again.</label>
+                </div>
+            </div>
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4.You forgot to invite a close friend to your birthday party by mistake.
+                    How do you feel?</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="Happy"> Happy: They'll understand and laugh it off.</label>
+                    <label><input type="radio" name="q4" value="Sad"> Sad: I feel terrible about forgetting.</label>
+                    <label><input type="radio" name="q4" value="Angry"> Angry: Why didn’t someone remind me?</label>
+                    <label><input type="radio" name="q4" value="Depressed">Depressed: They must not care about me anymore!</label>
+                </div>
+            </div>
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. You receive a text from a friend you haven’t heard from in a while.</p>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="Happy"> Happy: You feel excited to reconnect and can’t wait to catch up.</label>
+                    <label><input type="radio" name="q5" value="Sad"> Sad: You feel lonely, wishing you had heard from them sooner.</label>
+                    <label><input type="radio" name="q5" value="Angry"> Angry: You feel upset because you think they should have reached out earlier.</label>
+                    <label><input type="radio" name="q5" value="Depressed">Depressed: You feel like nobody cares about you, and their message doesn’t change how isolated you feel.</label>
+                </div>
+            </div>
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. You’ve been working hard on a big project at work or school for several weeks. You've put in extra hours, and it's been stressful, but you're confident that your effort will pay off. Today, you finally get the results and the feedback is not what you expected. Your work is criticized heavily, and it feels like your efforts were wasted.</p>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="Happy"> Happy: Despite the criticism, you feel proud of how much you’ve learned through the process and are optimistic about improving in the future.</label>
+                    <label><input type="radio" name="q6" value="Sad"> Sad: You feel disappointed and disheartened because you invested so much time and energy into the project, and it didn't turn out as you hoped.</label>
+                    <label><input type="radio" name="q6" value="Angry"> Angry: You are frustrated because you feel like your hard work was not appreciated and that the feedback was unfair or too harsh.</label>
+                    <label><input type="radio" name="q6" value="Depressed"> Depressed: The criticism feels overwhelming, and you start doubting your abilities. It feels like all your efforts were pointless, and you're unsure if you want to continue putting yourself out there.</label>
+                </div>
+            </div>
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. You’ve been looking forward to a weekend trip with your friends for months. You’ve made all the plans, booked the accommodations, and everyone was excited. However, just before leaving, you receive a message that the trip has to be canceled because of unexpected circumstances, such as a sudden illness or a personal emergency.</p>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="Happy"> Happy: You try to make the most of the situation by planning a fun alternative activity or spending quality time with your friends in a different way.</label>
+                    <label><input type="radio" name="q7" value="Sad"> Sad: You feel let down and disappointed because you were really looking forward to the trip, and now it's not happening.</label>
+                    <label><input type="radio" name="q7" value="Angry"> Angry: You're frustrated and upset because the cancellation feels unfair, especially after all the planning and excitement that went into it.</label>
+                    <label><input type="radio" name="q7" value="Depressed"> Depressed: The cancellation overwhelms you, and you feel as though your plans and excitement were pointless. You're left feeling down and unsure about making future plans.</label>
+                </div>
+            </div>
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. You’ve been training for months to run a marathon. The day of the race arrives, and you’ve been feeling nervous, but you push yourself through the entire course. As you cross the finish line, you look at the clock and realize you’ve completed the race in a personal best time. You’ve reached your goal!</p>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="Happy"> Happy: You feel elated and proud of yourself for finishing the marathon with your best time, celebrating all the hard work you’ve put into the training.</label>
+                    <label><input type="radio" name="q8" value="Sad"> Sad: You feel a bit disappointed because, although you finished the race, you didn’t quite reach the time you were aiming for.</label>
+                    <label><input type="radio" name="q8" value="Angry"> Angry: You feel frustrated because you had a tough time during the race, and despite all your effort, things didn’t go as planned.</label>
+                    <label><input type="radio" name="q8" value="Depressed"> Depressed: You feel exhausted and overwhelmed, and although you completed the race, it doesn't feel as rewarding as you had hoped.</label>
+                </div>
+            </div>
+
+            <button type="button" class="submit-btn" onclick="calculateResult()">Submit</button>
+        </form>
+        <div id="result" style="text-align:center; margin-top:20px; font-weight:bold;"></div>
+    </div>
+
+    <script>
+        function calculateResult() {
+            const responses = {};
+            const formData = new FormData(document.getElementById('questionnaire'));
+            formData.forEach((value) => {
+                if (responses[value]) {
+                    responses[value] += 1;
+                } else {
+                    responses[value] = 1;
+                }
+            });
+
+            // Find the dominant emotion
+            let maxEmotion = null;
+            let maxCount = 0;
+            for (const emotion in responses) {
+                if (responses[emotion] > maxCount) {
+                    maxCount = responses[emotion];
+                    maxEmotion = emotion;
+                }
+            }
+
+            // Redirect based on dominant emotion
+            if (maxEmotion === "Happy") {
+                window.location.href = "Happy.html";
+            } else if (maxEmotion === "Sad") {
+                window.location.href = "Sad.html";
+            } else if (maxEmotion === "Angry") {
+                window.location.href = "Angry.html";
+            } else if (maxEmotion === "Depressed") {
+                window.location.href = "Depressed.html";
+            } else {
+                document.getElementById('result').textContent = "Please answer all the questions.";
+            }
+        }
+    </script>
+</body>
+</html>
