@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Puzzle Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        #game {
+            display: grid;
+            grid-template-columns: repeat(4, 60px);
+            gap: 10px;
+        }
+        .tile {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #007bff;
+            color: white;
+            font-size: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .tile.hidden {
+            visibility: hidden;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quick Puzzle Game</h1>
+    <h2>Solve the Puzzle in ascending order</h2>
+    <div id="game"></div>
+    <div id="result"></div>
+
+    <script>
+        const gameContainer = document.getElementById('game');
+        const resultContainer = document.getElementById('result');
+
+        let tiles = [];
+        let nextNumber = 1;
+        let startTime;
+        let mistakeMade = false;
+
+        // Generate 16 shuffled tiles
+        function generateTiles() {
+            tiles = Array.from({ length: 16 }, (_, i) => i + 1);
+            tiles.sort(() => Math.random() - 0.5);
+
+            gameContainer.innerHTML = '';
+            tiles.forEach((number) => {
+                const tile = document.createElement('div');
+                tile.classList.add('tile');
+                tile.textContent = number;
+                tile.addEventListener('click', handleTileClick);
+                gameContainer.appendChild(tile);
+            });
+        }
+
+        // Handle tile click
+        function handleTileClick(event) {
+            const tile = event.target;
+            const number = parseInt(tile.textContent, 10);
+
+            if (number === nextNumber) {
+                tile.classList.add('hidden');
+                nextNumber++;
+
+                if (number === 1) {
+                    startTime = new Date();
+                }
+
+                if (nextNumber > 16) {
+                    const endTime = new Date();
+                    const timeTaken = ((endTime - startTime) / 1000).toFixed(2);
+                    let mood = '';
+
+                    if (mistakeMade) {
+                        mood = 'angry';
+                    } else if (timeTaken <= 20) {
+                        mood = 'happy';
+                    } else if (timeTaken <= 40) {
+                        mood = 'sad';
+                    } else {
+                        mood = 'depressed';
+                    }
+
+                    // Redirect based on the mood
+                    window.location.href = `${mood}.html`;
+                }
+            } else {
+                mistakeMade = true;
+            }
+        }
+
+        // Initialize the game
+        generateTiles();
+    </script>
+</body>
+</html>
